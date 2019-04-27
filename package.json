@@ -1,0 +1,28 @@
+{
+  "name": "io19-puppeteer-codelab",
+  "version": "1.0.0",
+  "description": "Codelab that walks through the setup and usage of Puppeteer",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emuneee/io19-puppeteer-codelab.git"
+  },
+  "keywords": [
+    "puppeteer",
+    "chrome",
+    "nodejs",
+    "javascript"
+  ],
+  "author": "Evan Halley (Evan.Halley@gmail.com)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/emuneee/io19-puppeteer-codelab/issues"
+  },
+  "homepage": "https://github.com/emuneee/io19-puppeteer-codelab#readme",
+  "dependencies": {
+    
+  }
+}
