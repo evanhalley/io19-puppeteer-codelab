@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/emuneee/io19-puppeteer-codelab#readme",
   "dependencies": {
-    
+    "express": "^4.16.4",
+    "puppeteer": "^1.15.0"
   }
 }
