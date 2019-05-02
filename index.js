@@ -31,9 +31,23 @@ app.get('/codelab', async (req, res) => {
 async function search(query) {
     let results = [];
     
-    // TODO: use puppeteer to get the codelabs from the codelabs webpage
+    let browser = await puppeteer.launch();
+    let page = await browser.newPage();
+    await page.goto(CODELAB_URL);
+    let cardHandles = await page.$$('#cards > a');
 
-    results.push({"title":"This is just a title","duration":"79","category":"IoT","url":"http://google.com/linktocodelab"});
+    for (let i = 0; i < cardHandles.length; i++) {
+        let cardHandle = cardHandles[i];
+        let codelab = await page.evaluate(element => {
+            return {
+                title: element.getAttribute('data-title'),
+                url: element.getAttribute('href'),
+                duration: parseInt(element.getAttribute('data-duration')),
+                category: element.getAttribute('data-category')
+            };
+        }, cardHandle);
+        results.push(codelab);
+    }
 
     // filter and return results
     return results.filter(codelab => {
